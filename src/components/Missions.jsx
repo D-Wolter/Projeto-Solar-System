@@ -5,14 +5,19 @@ import MissionsCard from './MissionCard';
 
 class Missions extends React.Component {
   render() {
-    const { Missions: { name, year, country, destination } } = this.props;
     return (
       <div data-testid="missions">
         <Title headline="Missões" />
         <di>
-          {
-            missions.map((mission) => <MissionsCard key={ name } name={ name } year={ year } country={ country } destination={ destination }/>)
-          }
+          {missions.map((mission) => (
+            <MissionsCard
+              key={ mission.name }
+              name={ mission.name }
+              year={ mission.year }
+              country={ mission.country }
+              destination={ mission.destination }
+            />
+          ))}
         </di>
       </div>
     );
